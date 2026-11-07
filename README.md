@@ -6,7 +6,13 @@ An AI-powered browser testing automation tool that converts plain-English test c
 
 The Plain-English Test Automator simplifies web application testing by allowing users to describe test scenarios in natural language instead of manually writing Playwright scripts.
 
-The application uses Google Gemini AI to understand the test requirements and generate Playwright code based on the current webpage's DOM snapshot. The generated code is dynamically executed using Playwright Chromium.
+The application uses Google Gemini AI to understand test requirements and generate Playwright code based on the current webpage's DOM snapshot. The generated code is dynamically executed using Playwright Chromium.
+
+## 🎥 Assessment Video Demonstration
+
+The following video demonstrates the implementation, workflow, and execution of the CloudQA Task 2 Plain-English Test Automator.
+
+**[▶️ Watch CloudQA Task 2 Assessment Video](https://drive.google.com/file/d/1twqUL-Owwa-z4ixyHfODad7wprzhoeVM/view?usp=sharing)**
 
 ## ✨ Features
 
@@ -55,13 +61,13 @@ cloudqa-task2-automator/
 
 ### Module Responsibilities
 
-**1. `src/index.js` – Application Entry Point**
+#### 1. `src/index.js` – Application Entry Point
 
 - Accepts the target website URL and test case from command-line arguments.
 - Initializes the automation workflow.
 - Passes the test case and URL to the test executor.
 
-**2. `src/ai/llmService.js` – AI Code Generation**
+#### 2. `src/ai/llmService.js` – AI Code Generation
 
 - Integrates Google Gemini AI using the Vercel AI SDK.
 - Constructs prompts using the test case and DOM snapshot.
@@ -69,7 +75,7 @@ cloudqa-task2-automator/
 - Cleans the generated code before execution.
 - Handles API quota errors with a manual code fallback.
 
-**3. `src/core/testExecutor.js` – Browser Test Execution**
+#### 3. `src/core/testExecutor.js` – Browser Test Execution
 
 - Launches Chromium using Playwright.
 - Navigates to the target website.
@@ -140,6 +146,8 @@ GEMINI_API_KEY=your_gemini_api_key
 ```
 
 Ensure that the configured Gemini model is available for your API key.
+
+**Important:** Never commit your Gemini API key to version control.
 
 ### 4. Run the Application
 
